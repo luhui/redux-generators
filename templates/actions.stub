@@ -1,11 +1,9 @@
-import { createAction } from 'redux-actions';
+import { createAction } from 'redux-actions'
+import { createAsyncActions } from 'redux-async-actions'
+import { createAsyncTypes } from 'redux-async-types'
 
-import {
-<% types.forEach(type => {
-%>  <%= type %>,
-<% })
-%>} from 'path/to/action-types';
+const types = createAsyncTypes(<%=prefix%>,
+  'YOUR_ACTION'
+)
 
-<% actions.forEach((action, index) => {
-%>export const <%= action %> = createAction(<%= types[index] %>);
-<% }) %>
+export const testAction = createAction(YOUR_ACTION)

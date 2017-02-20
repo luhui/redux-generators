@@ -5,4 +5,7 @@ module.exports = {
   actionTemplate: 'actions.stub',
   selectorTemplate: 'selectors.stub',
   containerTemplate: 'container.stub',
+  componentTemplate: 'component.stub',
+  stylesTemplate: 'styles.stub',
+  indexTemplate: 'index.stub',
 };

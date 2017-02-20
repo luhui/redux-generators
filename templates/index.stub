@@ -1,0 +1,13 @@
+import * as actions from './<%=name%>Actions'
+import * as reducers from './<%=name%>Reducers'
+import * as selectors from './<%=name%>Selectors'
+
+export default {
+  actions,
+  reducers,
+  selectors,
+}
+
+export actions
+export reducers
+export selectors
