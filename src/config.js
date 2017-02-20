@@ -8,4 +8,5 @@ module.exports = {
   componentTemplate: 'component.stub',
   stylesTemplate: 'styles.stub',
   indexTemplate: 'index.stub',
+  sceneTemplate: 'scene.stub',
 };

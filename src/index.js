@@ -9,5 +9,6 @@ program
 
 require('./commands/make-component');
 require('./commands/make-redux');
+require('./commands/make-scene');
 
 program.parse(process.argv);

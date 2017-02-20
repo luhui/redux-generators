@@ -17,6 +17,7 @@ const containerStub = path.join(templatesDir, config.containerTemplate);
 const componentStub = path.join(templatesDir, config.componentTemplate);
 const stylesStub = path.join(templatesDir, config.stylesTemplate);
 const indexStub = path.join(templatesDir, config.indexTemplate);
+const sceneStub = path.join(templatesDir, config.sceneTemplate);
 
 utils.assert(utils.existsSync(reducerStub), 'Reducer template stub not found.');
 utils.assert(utils.existsSync(actionStub), 'Action template stub not found.');
@@ -37,4 +38,5 @@ module.exports = {
   componentStub,
   stylesStub,
   indexStub,
+  sceneStub,
 };
