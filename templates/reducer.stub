@@ -4,6 +4,7 @@ import {
 
 } from './<%=name%>Actions'
 
+const defaultState = {}
 export default handleActions({
 
-})
+}, defaultState)

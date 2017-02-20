@@ -1,9 +1,9 @@
 import { createAction } from 'redux-actions'
 import { createAsyncActions } from 'redux-async-actions'
-import { createAsyncTypes } from 'redux-async-types'
+import { createActionTypes } from 'redux-action-type'
 
-const types = createAsyncTypes(<%=prefix%>,
+const t = createActionTypes('<%=prefix%>',
   'YOUR_ACTION'
 )
 
-export const testAction = createAction(YOUR_ACTION)
+export const testAction = createAction(t.YOUR_ACTION)

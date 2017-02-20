@@ -59,13 +59,15 @@ program
         utils.write(`${insertPath}${folderName}/${folderName}Reducer.js`, res[0]),
         utils.write(`${insertPath}${folderName}/${folderName}Actions.js`, res[1]),
         utils.write(`${insertPath}${folderName}/${folderName}Selectors.js`, res[2]),
+        utils.write(`${insertPath}${folderName}/index.js`, res[3]),
       ]))
       .then(() => utils.success(
         `State folder successfully created!
         ==> "${insertPath}${folderName}/"
         ==> "${insertPath}${folderName}/${folderName}Reducer.js"
         ==> "${insertPath}${folderName}/${folderName}Actions.js"
-        ==> "${insertPath}${folderName}/${folderName}Selectors.js"`
+        ==> "${insertPath}${folderName}/${folderName}Selectors.js"
+        ==> "${insertPath}${folderName}/index.js"`
       ))
       .catch(utils.exit);
   });
