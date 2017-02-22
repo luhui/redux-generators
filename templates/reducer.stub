@@ -1,10 +1,12 @@
 import { handleActions } from 'redux-actions'
+import { handleAsyncActions } from 'redux-async-actions'
+import Immutable from 'immutable'
 
 import {
 
 } from './<%=name%>Actions'
 
-const defaultState = {}
+const defaultState = Immutable.Map({})
 export default handleActions({
 
 }, defaultState)

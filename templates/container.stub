@@ -1,5 +1,7 @@
 import <%=name%>View from './<%=name%>View'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { actions } from 'modules/<%=actions%>'
 
 const mapStateToProps = (state) => ({})
 const mapDispatchToProps = (dispatch) => ({})
