@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react'
 import <%=nameWithUpperfirst%> from 'components/<%=name%>'
 import { Scene } from 'react-native-router-flux'

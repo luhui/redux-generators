@@ -1,3 +1,5 @@
+// @flow
+
 import * as actions from './<%=name%>Actions'
 import reducer from './<%=name%>Reducer'
 import * as selectors from './<%=name%>Selectors'

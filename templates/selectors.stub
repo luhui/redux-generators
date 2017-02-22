@@ -1,3 +1,5 @@
+// @flow
+
 import { createSelector } from 'reselect'
 <% selectors.forEach(selector => { %>
 export const <%= selector %> = createSelector()

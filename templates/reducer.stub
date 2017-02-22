@@ -1,6 +1,8 @@
+// @flow
+
 import { handleActions } from 'redux-actions'
 import { handleAsyncActions } from 'redux-async-actions'
-import Immutable from 'immutable'
+import * as Immutable from 'immutable'
 
 import {
 
