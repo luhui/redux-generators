@@ -41,7 +41,8 @@ program
         return Promise.all([
           Promise.resolve(template(res[0])()),
           Promise.resolve(template(res[1])({
-            name: upperfirst(folderName)
+            name: upperfirst(folderName),
+            actions: folderName,
           })),
           Promise.resolve(template(res[2])()),
         ]);
