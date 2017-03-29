@@ -49,6 +49,8 @@ program
           })),
           Promise.resolve(template(res[2])({
             selectors: options.selectors,
+            name: folderName,
+            nameWithUpperfirst: upperfirst(folderName)
           })),
           Promise.resolve(template(res[3])({
             name: folderName,
