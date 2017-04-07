@@ -38,16 +38,16 @@ program
         return Promise.all([
           Promise.resolve(template(res[0])({
             name: folderName,
-            nameWithUpperfirst: upperfirst(folderName)
+            nameWithUpperfirst: upperfirst(name)
           }))
         ]);
       })
       .then(res => Promise.all([
-        utils.write(`${insertPath}${folderName}Scene.js`, res[0]),
+        utils.write(`${insertPath}${name}Scene.js`, res[0]),
       ]))
       .then(() => utils.success(
         `State folder successfully created!
-        ==> "${insertPath}${folderName}Scene.js"`
+        ==> "${insertPath}${name}Scene.js"`
       ))
       .catch(utils.exit);
   });

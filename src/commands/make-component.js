@@ -41,21 +41,21 @@ program
         return Promise.all([
           Promise.resolve(template(res[0])()),
           Promise.resolve(template(res[1])({
-            name: upperfirst(folderName),
-            actions: folderName,
+            name: upperfirst(name),
+            actions: name,
           })),
           Promise.resolve(template(res[2])()),
         ]);
       })
       .then(res => Promise.all([
-        utils.write(`${insertPath}${folderName}/${upperfirst(folderName)}View.js`, res[0]),
+        utils.write(`${insertPath}${folderName}/${upperfirst(name)}View.js`, res[0]),
         utils.write(`${insertPath}${folderName}/index.js`, res[1]),
         utils.write(`${insertPath}${folderName}/styles.js`, res[2]),
       ]))
       .then(() => utils.success(
         `State folder successfully created!
         ==> "${insertPath}${folderName}/"
-        ==> "${insertPath}${folderName}/${upperfirst(folderName)}View.js"
+        ==> "${insertPath}${folderName}/${upperfirst(name)}View.js"
         ==> "${insertPath}${folderName}/index.js"
         ==> "${insertPath}${folderName}/styles.js"`
       ))

@@ -42,33 +42,33 @@ program
       .then(res => {
         return Promise.all([
           Promise.resolve(template(res[0])({
-            name: folderName,
+            name: name,
           })),
           Promise.resolve(template(res[1])({
-            prefix: uppercase(folderName),
+            prefix: uppercase(name),
           })),
           Promise.resolve(template(res[2])({
             selectors: options.selectors,
-            name: folderName,
-            nameWithUpperfirst: upperfirst(folderName)
+            name: name,
+            nameWithUpperfirst: upperfirst(name)
           })),
           Promise.resolve(template(res[3])({
-            name: folderName,
+            name: name,
           }))
         ]);
       })
       .then(res => Promise.all([
-        utils.write(`${insertPath}${folderName}/${folderName}Reducer.js`, res[0]),
-        utils.write(`${insertPath}${folderName}/${folderName}Actions.js`, res[1]),
-        utils.write(`${insertPath}${folderName}/${folderName}Selectors.js`, res[2]),
+        utils.write(`${insertPath}${folderName}/${name}Reducer.js`, res[0]),
+        utils.write(`${insertPath}${folderName}/${name}Actions.js`, res[1]),
+        utils.write(`${insertPath}${folderName}/${name}Selectors.js`, res[2]),
         utils.write(`${insertPath}${folderName}/index.js`, res[3]),
       ]))
       .then(() => utils.success(
         `State folder successfully created!
         ==> "${insertPath}${folderName}/"
-        ==> "${insertPath}${folderName}/${folderName}Reducer.js"
-        ==> "${insertPath}${folderName}/${folderName}Actions.js"
-        ==> "${insertPath}${folderName}/${folderName}Selectors.js"
+        ==> "${insertPath}${folderName}/${name}Reducer.js"
+        ==> "${insertPath}${folderName}/${name}Actions.js"
+        ==> "${insertPath}${folderName}/${name}Selectors.js"
         ==> "${insertPath}${folderName}/index.js"`
       ))
       .catch(utils.exit);
