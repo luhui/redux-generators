@@ -5,13 +5,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](.github/CONTRIBUTING.md)
 [![Maintenance](https://img.shields.io/maintenance/yes/2016.svg)]()
 
-Redux Generators is a lightweight, opinionated CLI that helps scaffold a scalable approach to Redux.
-
-[![Demo Video](https://asciinema.org/a/79777.png)](https://asciinema.org/a/79777)
-
-Many Redux applications maintain separate directories for actions, reducers, and selectors. While this may work for small apps, maintaining files in three different directories for every new feature becomes tedious as an application grows. Utilizing a single directory per feature is a [more scalable approach](http://bpxl-labs.github.io/redux-handbook/sections/folder-file-structure.html), and allows a Redux directory structure to model the application's state tree.
-
-If you've struggled with structuring or scaling Redux applications, or are just looking for some convenience tooling to get more work done faster, Redux Generators is for you.
+感谢[Redux Generators](https://github.com/bpxl-labs/redux-generators)，我们基于此，结合自己的业务需求，提供了生成相应模块模板的工具
 
 ### Prerequisites
 Redux Generators requires the following utilities:
@@ -26,17 +20,15 @@ If you aren't using them already, install and add to your project's dependencies
 ### Sample usage
 
 1. `$ npm i redux-generators -g`
-2. `$ rg make example --reducers=one,two,three --actions=oneAction,twoAction,threeAction`
+2. `$ rg make:component login
 
 ### Available Commands
 
-|Command|Description| |
-|---|---|---|
-|`rg make <name>`|Creates a reducer, actions, and selectors|[Options & Usage](https://github.com/bpxl-labs/redux-generators/tree/feature/readme-overhaul#-rg-make-name-options)|
-|`rg make:reducer [options]`|Creates a reducer.|[Options & Usage](https://github.com/bpxl-labs/redux-generators/tree/feature/readme-overhaul#-rg-makereducer-options)|
-|`rg make:action [options]`|Creates actions.|[Options & Usage](https://github.com/bpxl-labs/redux-generators/tree/feature/readme-overhaul#-rg-makeaction-options)|
-|`rg make:selector [options]`|Creates selectors.|[Options & Usage](https://github.com/bpxl-labs/redux-generators/tree/feature/readme-overhaul#-rg-makeselector-options)|
-|`rg make:container <name> [options]`|Creates a container component|[Options & Usage](https://github.com/bpxl-labs/redux-generators/tree/feature/readme-overhaul#-rg-makecontainer-name)|
+|Command|Description|
+|---|---|
+|`rg make:component [options]`|Creates a component.|
+|`rg make:redux [options]`|Creates actions&selectors&reducers.|
+|`rg make:scene [options]`|Creates scenes.|
 
 ### Global Options
 
@@ -102,128 +94,3 @@ Creates a new folder using `<name>` that houses three files:
 - `reducer.js`
 - `actions.js`
 - `selectors.js`
-
-**Options**
-
-|Option|Description|
-|---|---|
-|`--reducers`|A comma separated list of initial reducer items to add into your `reducer.js` file|
-|`--selectors`|A comma separated list of initial selectors to add into your `selectors.js` file|
-|`--actions`|A comma separated list of initial actions to add into your `actions.js` file|
-
-**Example**
-```javascript
-// inside reducer.js
-import { combineReducers } from 'redux';
-import { handleActions } from 'redux-actions';
-
-import {
-  TESTER_TEST_ACTION,
-} from 'path/to/action-types';
-
-const foo = handleActions({
-  [TESTER_TEST_ACTION]: (state, { payload }) => payload,
-});
-
-const bar = handleActions({
-  [TESTER_TEST_ACTION]: (state, { payload }) => payload,
-});
-
-const baz = handleActions({
-  [TESTER_TEST_ACTION]: (state, { payload }) => payload,
-});
-
-export default combineReducers({
-  foo,
-  bar,
-  baz,
-});
-```
-
-### `$ rg make:reducer [options]`
-
-**Options**
-
-|Option|Description|
-|---|---|
-|`--name`|The filename for the reducer file|
-|`--items`|A comma separated list of initial reducer items to add into your reducer file|
-|`--actions`|A comma separated list of initial action types to add into your reducer file|
-
-
-### `$ rg make:action [options]`
-
-**Options**
-
-|Option|Description|
-|---|---|
-|`--name`|The filename for the actions file|
-|`--items`|A comma separated list of initial actions to add into your `actions.js` file|
-
-**Example**
-```javascript
-import { createAction } from 'redux-actions';
-
-import {
-  FOO_ACTION,
-  BAR_ACTION,
-  BAZ_ACTION,
-} from 'path/to/action-types';
-
-export const fooAction = createAction(FOO_ACTION);
-export const barAction = createAction(BAR_ACTION);
-export const bazAction = createAction(BAZ_ACTION);
-```
-
-### `$ rg make:selector [options]`
-
-**Options**
-
-|Option|Description|
-|---|---|
-|`--name`|The filename for the selectors file|
-|`--items`|A list of initial selectors to add into your `selectors.js` file|
-
-**Example**
-```javascript
-import { createSelector } from 'reselect';
-
-export const fooSelector = createSelector();
-export const barSelector = createSelector();
-export const bazSelector = createSelector();
-```
-
-### `$ rg make:container <name>`
-
-Creates a container component exported with the passed in `<name>`. The file name is derived from kebab and lowercasing the `<name>`.
-
-**Options**
-
-|Option|Description|
-|---|---|
-|`--selector [name]`|The selector you want to use for your container component|
-
-**Example**
-```javascript
-import { connect} from 'react-redux';
-
-import {
-  fooSelector,
-} from 'path/to/selector';
-
-const FooContainer = connect(
-  fooSelector,
-  dispatch => ({ })
-);
-
-export default FooContainer;
-```
-
-For more on how we structure Redux apps at Black Pixel, check out our [Redux Handbook](http://bpxl-labs.github.io/redux-handbook/).
-
----
-
-Website: [blackpixel.com](https://blackpixel.com) &nbsp;&middot;&nbsp;
-GitHub: [@bpxl-labs](https://github.com/bpxl-labs/) &nbsp;&middot;&nbsp;
-Twitter: [@blackpixel](https://twitter.com/blackpixel) &nbsp;&middot;&nbsp;
-Medium: [@bpxl-craft](https://medium.com/bpxl-craft)
