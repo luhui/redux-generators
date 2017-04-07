@@ -37,7 +37,8 @@ program
       .then(res => {
         return Promise.all([
           Promise.resolve(template(res[0])({
-            name: folderName,
+            folderName,
+            name,
             nameWithUpperfirst: upperfirst(name)
           }))
         ]);
