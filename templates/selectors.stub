@@ -2,8 +2,8 @@
 
 import { createSelector } from 'reselect'
 
-export const get<%=nameWithUpperfirst%>Value = (state:ImmutableState):ImmutableState = state.getIn(['<%=name%>', 'value'])
-export const get<%=nameWithUpperfirst%>State = (state:ImmutableState):ImmutableState = state.get('<%=name%>')
+export const get<%=nameWithUpperfirst%>Value = (state:ImmutableState):ImmutableState => state.getIn(['<%=name%>', 'value'])
+export const get<%=nameWithUpperfirst%>State = (state:ImmutableState):ImmutableState => state.get('<%=name%>')
 <% selectors.forEach(selector => { %>
 export const <%= selector %> = createSelector()
 <% }) %>
