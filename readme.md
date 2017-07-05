@@ -19,8 +19,9 @@ If you aren't using them already, install and add to your project's dependencies
 
 ### Sample usage
 
-1. `$ npm i redux-generators -g`
-2. `$ rg make:component login
+1. `$ cd redux-generator`
+1. `$ npm i . -g`
+2. `$ rg make:component login`
 
 ### Available Commands
 
